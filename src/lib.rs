@@ -1,6 +1,6 @@
 //! Board support crate for the Nordic nRF52840-DK
 //!
-//! This crate is in early development. UARTE, SPIM and TWI should be functiona,
+//! UARTE, SPIM and TWI should be functional,
 //! but might miss some features.
 #![no_std]
 
