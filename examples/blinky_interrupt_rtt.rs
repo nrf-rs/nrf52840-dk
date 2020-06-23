@@ -65,9 +65,9 @@ fn main() -> ! {
         // Get LED 2 and turn it off
         let mut led2 = nrf52.leds.led_2;
         led2.disable();
-        // Remove any pending interrupts on TIMER0 and TIMER1
-        pac::NVIC::unpend(pac::Interrupt::TIMER0);
-        pac::NVIC::unpend(pac::Interrupt::TIMER1);
+        // Clear timer events
+        let _ = timer0.wait();
+        let _ = timer1.wait();
         // Enable interrupts
         unsafe {
             pac::NVIC::unmask(pac::Interrupt::TIMER0);
@@ -112,8 +112,6 @@ fn TIMER0() {
     });
     // Print a message over RTT
     rprintln!("TIMER0");
-    // Clear the interrupt
-    pac::NVIC::unpend(pac::Interrupt::TIMER0);
 }
 
 #[interrupt]
@@ -133,6 +131,4 @@ fn TIMER1() {
             }
         }
     });
-    // Clear the interrupt
-    pac::NVIC::unpend(pac::Interrupt::TIMER1);
 }
