@@ -542,7 +542,7 @@ impl Button {
 
 /// The NFC pins on the nRF52840-DK board
 pub struct NFC {
-    /// nRF52840-DK: NFC1, nRF52: P0.08
+    /// nRF52840-DK: NFC1, nRF52: P0.09
     pub nfc_1: p0::P0_09<Input<Floating>>,
 
     /// nRF52840-DK: NFC2, nRF52: P0.10
