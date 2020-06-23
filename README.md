@@ -1,10 +1,10 @@
-# Board Support Package for the {manufacturer} {board}
+# Board Support Package for the Nordic nRF52840-DK
 
 This crate is a Board Support Package (BSP). It wraps the HAL crate (nrf52840-hal) for the on-board nRF52840, and provides high level wrappers for the
 onboard features:
 
-* 4 on-board LEDs
-* 4 on-board buttons
+- 4 on-board LEDs
+- 4 on-board buttons
 
 This BSP assumes you are not using a bootloader running in non-secure mode.
 
