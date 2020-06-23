@@ -516,7 +516,7 @@ impl Led {
     }
 }
 
-/// The LEDs on the nRF52840-DK board
+/// The Buttons on the nRF52840-DK board
 pub struct Buttons {
     /// nRF52840-DK: Button 1, nRF52: P0.30
     pub button_1: Button,
@@ -531,7 +531,7 @@ pub struct Buttons {
     pub button_4: Button,
 }
 
-/// An LED on the nRF52840-DK board
+/// A Button on the nRF52840-DK board
 pub struct Button(Pin<Input<PullUp>>);
 
 impl Button {
@@ -540,11 +540,11 @@ impl Button {
     }
 }
 
-/// The LEDs on the nRF52840-DK board
+/// The NFC pins on the nRF52840-DK board
 pub struct NFC {
-    /// nRF52840-DK: LED1, nRF52: P0.30
+    /// nRF52840-DK: NFC1, nRF52: P0.08
     pub nfc_1: p0::P0_09<Input<Floating>>,
 
-    /// nRF52840-DK: LED2, nRF52: P0.31
+    /// nRF52840-DK: NFC2, nRF52: P0.10
     pub nfc_2: p0::P0_10<Input<Floating>>,
 }
