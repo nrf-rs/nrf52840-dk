@@ -112,21 +112,24 @@ pub struct Board {
 
     /// nRF52 peripheral: TWIM0
     pub TWIM0: nrf52::TWIM0,
-
+    
     /// nRF52 peripheral: TWIS0
     pub TWIS0: nrf52::TWIS0,
-
+    
     /// nRF52 peripheral: SPI0
     pub SPI0: nrf52::SPI0,
-
+    
     /// nRF52 peripheral: TWI0
     pub TWI0: nrf52::TWI0,
-
+    
     /// nRF52 peripheral: SPIM1
     pub SPIM1: nrf52::SPIM1,
-
+    
     /// nRF52 peripheral: SPIS1
     pub SPIS1: nrf52::SPIS1,
+    
+    /// nRF52 peripheral: TWIM1
+    pub TWIM1: nrf52::TWIM1,
 
     /// nRF52 peripheral: TWIS1
     pub TWIS1: nrf52::TWIS1,
@@ -403,6 +406,7 @@ impl Board {
             TWI0: p.TWI0,
             SPIM1: p.SPIM1,
             SPIS1: p.SPIS1,
+            TWIM1: p.TWIM1,
             TWIS1: p.TWIS1,
             SPI1: p.SPI1,
             TWI1: p.TWI1,
