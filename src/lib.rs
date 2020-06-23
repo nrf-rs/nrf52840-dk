@@ -24,7 +24,7 @@ use nrf52840_hal::{
     uarte::{self, Baudrate as UartBaudrate, Parity as UartParity, Uarte},
 };
 
-use embedded_hal::digital::v2::OutputPin;
+use embedded_hal::digital::v2::{InputPin, OutputPin};
 
 /// Provides access to all features of the nRF52840-DK board
 #[allow(non_snake_case)]
@@ -541,6 +541,16 @@ pub struct Button(Pin<Input<PullUp>>);
 impl Button {
     fn new<Mode>(pin: Pin<Mode>) -> Self {
         Button(pin.into_pullup_input())
+    }
+
+    /// Button is pressed
+    pub fn is_pressed(&self) -> bool {
+        self.0.is_low().unwrap()
+    }
+
+    /// Button is released
+    pub fn is_released(&self) -> bool {
+        self.0.is_high().unwrap()
     }
 }
 
