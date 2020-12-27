@@ -24,7 +24,7 @@ To use in your own application, add as a dependency and call the
 
 ## Documentation
 
-The docs for this crate can be found at https://docs.rs/crate/nrf52840-dk-bsp. The
+The docs for this crate can be found at https://docs.rs/nrf52840-dk-bsp. The
 manufacturer's documentation is available from
 https://infocenter.nordicsemi.com/pdf/nRF52840_DK_User_Guide_v1.4.1.pdf.
 
