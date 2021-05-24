@@ -12,7 +12,7 @@ edition = "2018"
 cortex-m = { version = "0.5.4", features = [ "const-fn" ] }
 cortex-m-rt = "0.6.12"
 embedded-hal = "0.2.3"
-nrf52840-hal = "0.10.0"
+nrf52840-hal = { git = "https://github.com/nrf-rs/nrf-hal" }
 
 [dev-dependencies]
 cortex-m-rt = "0.6.12"

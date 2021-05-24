@@ -18,7 +18,7 @@ pub mod prelude {
 // pub mod debug;
 
 use nrf52840_hal::{
-    gpio::{p0, p1, Floating, Input, Level, Output, Pin, PullUp, PushPull},
+    gpio::{p0, p1, Disconnected, Input, Level, Output, Pin, PullUp, PushPull},
     pac::{self as nrf52, CorePeripherals, Peripherals},
     spim::{self, Frequency, Spim, MODE_0},
     uarte::{self, Baudrate as UartBaudrate, Parity as UartParity, Uarte},
@@ -457,33 +457,33 @@ impl Board {
 /// The nRF52 pins that are available on the nRF52840DK
 #[allow(non_snake_case)]
 pub struct Pins {
-    pub P0_03: p0::P0_03<Input<Floating>>,
-    pub P0_04: p0::P0_04<Input<Floating>>,
-    _RESET: p0::P0_18<Input<Floating>>,
-    pub P0_22: p0::P0_22<Input<Floating>>,
-    pub P0_23: p0::P0_23<Input<Floating>>,
-    pub P0_26: p0::P0_26<Input<Floating>>,
-    pub P0_27: p0::P0_27<Input<Floating>>,
-    pub P0_28: p0::P0_28<Input<Floating>>,
-    pub P0_29: p0::P0_29<Input<Floating>>,
-    pub P0_30: p0::P0_30<Input<Floating>>,
-    pub P0_31: p0::P0_31<Input<Floating>>,
-    pub P1_00: p1::P1_00<Input<Floating>>,
-    pub P1_01: p1::P1_01<Input<Floating>>,
-    pub P1_02: p1::P1_02<Input<Floating>>,
-    pub P1_03: p1::P1_03<Input<Floating>>,
-    pub P1_04: p1::P1_04<Input<Floating>>,
-    pub P1_05: p1::P1_05<Input<Floating>>,
-    pub P1_06: p1::P1_06<Input<Floating>>,
-    pub P1_07: p1::P1_07<Input<Floating>>,
-    pub P1_08: p1::P1_08<Input<Floating>>,
-    pub P1_09: p1::P1_09<Input<Floating>>,
-    pub P1_10: p1::P1_10<Input<Floating>>,
-    pub P1_11: p1::P1_11<Input<Floating>>,
-    pub P1_12: p1::P1_12<Input<Floating>>,
-    pub P1_13: p1::P1_13<Input<Floating>>,
-    pub P1_14: p1::P1_14<Input<Floating>>,
-    pub P1_15: p1::P1_15<Input<Floating>>,
+    pub P0_03: p0::P0_03<Disconnected>,
+    pub P0_04: p0::P0_04<Disconnected>,
+    _RESET: p0::P0_18<Disconnected>,
+    pub P0_22: p0::P0_22<Disconnected>,
+    pub P0_23: p0::P0_23<Disconnected>,
+    pub P0_26: p0::P0_26<Disconnected>,
+    pub P0_27: p0::P0_27<Disconnected>,
+    pub P0_28: p0::P0_28<Disconnected>,
+    pub P0_29: p0::P0_29<Disconnected>,
+    pub P0_30: p0::P0_30<Disconnected>,
+    pub P0_31: p0::P0_31<Disconnected>,
+    pub P1_00: p1::P1_00<Disconnected>,
+    pub P1_01: p1::P1_01<Disconnected>,
+    pub P1_02: p1::P1_02<Disconnected>,
+    pub P1_03: p1::P1_03<Disconnected>,
+    pub P1_04: p1::P1_04<Disconnected>,
+    pub P1_05: p1::P1_05<Disconnected>,
+    pub P1_06: p1::P1_06<Disconnected>,
+    pub P1_07: p1::P1_07<Disconnected>,
+    pub P1_08: p1::P1_08<Disconnected>,
+    pub P1_09: p1::P1_09<Disconnected>,
+    pub P1_10: p1::P1_10<Disconnected>,
+    pub P1_11: p1::P1_11<Disconnected>,
+    pub P1_12: p1::P1_12<Disconnected>,
+    pub P1_13: p1::P1_13<Disconnected>,
+    pub P1_14: p1::P1_14<Disconnected>,
+    pub P1_15: p1::P1_15<Disconnected>,
 }
 
 /// The LEDs on the nRF52840-DK board
@@ -557,8 +557,8 @@ impl Button {
 /// The NFC pins on the nRF52840-DK board
 pub struct NFC {
     /// nRF52840-DK: NFC1, nRF52: P0.09
-    pub nfc_1: p0::P0_09<Input<Floating>>,
+    pub nfc_1: p0::P0_09<Disconnected>,
 
     /// nRF52840-DK: NFC2, nRF52: P0.10
-    pub nfc_2: p0::P0_10<Input<Floating>>,
+    pub nfc_2: p0::P0_10<Disconnected>,
 }
