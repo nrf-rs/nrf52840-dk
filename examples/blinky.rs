@@ -4,8 +4,7 @@
 use cortex_m_rt::entry;
 use nb::block;
 
-#[allow(unused_imports)]
-use panic_semihosting;
+use panic_halt as _;
 
 use nrf52840_dk_bsp::{
     hal::{

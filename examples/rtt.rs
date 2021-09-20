@@ -55,7 +55,7 @@ fn main() -> ! {
     let mut log = channels.up.2;
     let mut input = channels.down.0;
     let mut buf = [0u8; 512];
-    if let Some(mut nrf52) = Board::take() {
+    if let Some(nrf52) = Board::take() {
         let mut timer = Timer::new(nrf52.TIMER0);
         let mut count: u8 = 0;
         loop {
