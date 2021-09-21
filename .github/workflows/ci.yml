@@ -1,0 +1,82 @@
+name: Continuous integration
+
+on:
+  push:
+    branches: [main, staging, trying]
+  pull_request:
+
+env:
+  TARGET: thumbv7em-none-eabihf
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - beta
+          - nightly
+        include:
+          # Minimum supported rust version (MSRV)
+          - name: MSRV
+            rust: 1.53.0
+
+    name: "build (${{ matrix.name || matrix.rust }})"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+          target: ${{ env.TARGET }}
+
+      - uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --target=${{ env.TARGET }}
+
+      - uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --examples --target=${{ env.TARGET }}
+
+  clippy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: ${{ env.TARGET }}
+          profile: minimal
+          override: true
+          components: clippy
+
+      - uses: actions-rs/clippy-check@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: --all-features -- -D warnings
+
+  fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: ${{ env.TARGET }}
+          profile: minimal
+          override: true
+          components: rustfmt
+
+      - name: rustfmt
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --all -- --check
