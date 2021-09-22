@@ -16,7 +16,7 @@ use panic_rtt_target as _;
 use rtt_target::{rprintln, rtt_init_print};
 
 use bsp::hal;
-use hal::target as pac;
+use hal::pac;
 use nrf52840_dk_bsp as bsp;
 
 use pac::interrupt;
