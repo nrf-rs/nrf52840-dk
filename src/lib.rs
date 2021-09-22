@@ -508,6 +508,11 @@ impl Led {
         Led(pin.into_push_pull_output(Level::High))
     }
 
+    /// Release the inner Pin to be used directly
+    pub fn release(self) -> Pin<Output<PushPull>> {
+        self.0
+    }
+
     /// Enable the LED
     pub fn enable(&mut self) {
         self.0.set_low().unwrap()
@@ -540,6 +545,11 @@ pub struct Button(Pin<Input<PullUp>>);
 impl Button {
     fn new<Mode>(pin: Pin<Mode>) -> Self {
         Button(pin.into_pullup_input())
+    }
+
+    /// Release the inner Pin to be used directly
+    pub fn release(self) -> Pin<Input<PullUp>> {
+        self.0
     }
 
     /// Button is pressed
