@@ -1,6 +1,6 @@
 [package]
 name = "nrf52840-dk-bsp"
-version = "0.1.0"
+version = "0.2.0"
 description = "BSP for the nRF52840-DK"
 edition = "2018"
 
