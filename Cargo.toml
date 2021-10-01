@@ -1,12 +1,16 @@
 [package]
-authors = ["Noah Hüsser <yatekii@yatekii.ch>"]
-categories = ["embedded", "hardware-support", "no-std"]
-description = "BSP for the nRF52840-DK"
-keywords = ["arm", "cortex-m", "nrf52", "hal"]
-license = "MIT OR Apache-2.0"
 name = "nrf52840-dk-bsp"
 version = "0.1.0"
+description = "BSP for the nRF52840-DK"
 edition = "2018"
+
+authors = ["Noah Hüsser <yatekii@yatekii.ch>"]
+categories = ["embedded", "hardware-support", "no-std"]
+keywords = ["arm", "cortex-m", "nrf52", "hal"]
+license = "MIT OR Apache-2.0"
+
+readme = "./README.md"
+repository = "https://github.com/nrf-rs/nrf52840-dk"
 
 [dependencies]
 cortex-m = "0.7"
